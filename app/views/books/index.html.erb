@@ -1,0 +1,46 @@
+
+<p id="notice"><%= notice %></p>
+
+<body>
+<div class="container">  
+<h1>日記帳</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <!--<th>isbn</th>-->
+      <th>タイトル</th>
+      <!--<th>Price</th>-->
+      <!--<th>Publish</th>-->
+      <th>日付</th>
+      <th>見る</th>
+      <th>編集</th>
+      <th>削除</th>
+      
+      <!--<th>Dl</th>-->
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @books.each do |book| %>
+      <tr>
+       <!-- <td><%= book.isbn %></td>-->
+        <td><%= book.title %></td>
+        <!--<td><%= book.price %></td>-->
+        <!--<td><%= book.publish %></td>-->
+        <td><%= book.published %></td>
+        <!--<td><%= book.dl %></td>-->
+        <td><%= link_to '見る', book,class: 'btn btn-info' %></td>
+        <td><%= link_to '編集', edit_book_path(book),class: 'btn btn-success' %></td>
+        <td><%= link_to '削除', book, method: :delete, data: { confirm: '本当にいいですか?' },class: 'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '日記作成', new_book_path, class: 'btn btn-warning' %>
+</div>
+</body>

@@ -1,0 +1,37 @@
+<div class="container">  
+<h1>詳細</h1>
+<p id="notice"><%= notice %></p>
+<!--
+<p>
+  <strong>Isbn:</strong>
+  <%= @book.isbn %>
+</p>
+-->
+<p>
+  <strong>タイトル:</strong>
+  <%= @book.title %>
+</p>
+<!--
+<p>
+  <strong>Price:</strong>
+  <%= @book.price %>
+</p>
+-->
+<p>
+  <strong>本文:</strong>
+  <%= @book.publish %>
+</p>
+
+<p>
+  <strong>日付:</strong>
+  <%= @book.published %>
+</p>
+<!--
+<p>
+  <strong>Dl:</strong>
+  <%= @book.dl %>
+</p>
+-->
+<%= link_to '編集', edit_book_path(@book),class: 'btn btn-info'%> |
+<%= link_to '戻る', books_path,class: 'btn btn-default' %>
+</div>
